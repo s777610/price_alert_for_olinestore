@@ -64,3 +64,8 @@ class Store(object):
                 return store
             except:
                 raise StoreErrors.StoreNotFoundException("The URL used Prefix to find the store didn't give us any results!")
+
+
+    @classmethod
+    def all(cls):
+        return [cls(**elem) for elem in Database.find(StoreConstants.COLLECTION, {})]

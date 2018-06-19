@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4feba8a5-b6e7-4007-b2c4-1dcf823ebcad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/common/database.py" afterPath="$PROJECT_DIR$/src/common/database.py" />
-      <change beforePath="$PROJECT_DIR$/src/models/alerts/alert.py" afterPath="$PROJECT_DIR$/src/models/alerts/alert.py" />
-      <change beforePath="$PROJECT_DIR$/src/models/alerts/views.py" afterPath="$PROJECT_DIR$/src/models/alerts/views.py" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/item.py" afterPath="$PROJECT_DIR$/src/models/items/item.py" />
+      <change beforePath="$PROJECT_DIR$/src/models/stores/store.py" afterPath="$PROJECT_DIR$/src/models/stores/store.py" />
       <change beforePath="$PROJECT_DIR$/src/models/stores/views.py" afterPath="$PROJECT_DIR$/src/models/stores/views.py" />
-      <change beforePath="$PROJECT_DIR$/src/models/users/constants.py" afterPath="$PROJECT_DIR$/src/models/users/constants.py" />
-      <change beforePath="$PROJECT_DIR$/src/models/users/decorators.py" afterPath="$PROJECT_DIR$/src/models/users/decorators.py" />
-      <change beforePath="$PROJECT_DIR$/src/models/users/user.py" afterPath="$PROJECT_DIR$/src/models/users/user.py" />
-      <change beforePath="$PROJECT_DIR$/src/models/users/views.py" afterPath="$PROJECT_DIR$/src/models/users/views.py" />
-      <change beforePath="$PROJECT_DIR$/src/templates/alerts/alert.html" afterPath="$PROJECT_DIR$/src/templates/alerts/alert.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/alerts/new_alert.html" afterPath="$PROJECT_DIR$/src/templates/alerts/new_alert.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/base.html" afterPath="$PROJECT_DIR$/src/templates/base.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/users/alerts.html" afterPath="$PROJECT_DIR$/src/templates/users/alerts.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/users/login.html" afterPath="$PROJECT_DIR$/src/templates/users/login.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/users/register.html" afterPath="$PROJECT_DIR$/src/templates/users/register.html" />
+      <change beforePath="$PROJECT_DIR$/src/templates/stores/store_index.html" afterPath="$PROJECT_DIR$/src/templates/stores/store_index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +18,8 @@
       <file leaf-file-name="store_index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/stores/store_index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+            <state relative-caret-position="180">
+              <caret line="12" column="75" lean-forward="true" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -41,9 +28,23 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/stores/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/stores/store.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,7 +72,6 @@
         <option value="$PROJECT_DIR$/src/models/items/constants.py" />
         <option value="$PROJECT_DIR$/src/models/stores/constants.py" />
         <option value="$PROJECT_DIR$/src/models/stores/errors.py" />
-        <option value="$PROJECT_DIR$/src/models/stores/store.py" />
         <option value="$PROJECT_DIR$/src/alert_updater.py" />
         <option value="$PROJECT_DIR$/src/models/alerts/constants.py" />
         <option value="$PROJECT_DIR$/src/templates/stores/store_list.html" />
@@ -101,15 +101,16 @@
         <option value="$PROJECT_DIR$/src/common/database.py" />
         <option value="$PROJECT_DIR$/src/models/alerts/views.py" />
         <option value="$PROJECT_DIR$/src/models/alerts/alert.py" />
+        <option value="$PROJECT_DIR$/src/models/stores/store.py" />
         <option value="$PROJECT_DIR$/src/templates/stores/store_index.html" />
         <option value="$PROJECT_DIR$/src/models/stores/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="521" />
+    <option name="x" value="257" />
     <option name="y" value="23" />
-    <option name="width" value="759" />
+    <option name="width" value="1023" />
     <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -309,10 +310,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="521" y="23" width="759" height="726" extended-state="0" />
+    <frame x="257" y="23" width="1023" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26287264" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19361277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25356576" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -379,7 +380,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -718,14 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/stores/store.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/stores/store.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -734,19 +729,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/stores/store.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/stores/store_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        <state relative-caret-position="180">
+          <caret line="12" column="75" lean-forward="true" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/stores/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
