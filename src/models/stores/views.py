@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, json, url_for, redirect
 
 from src.models.stores.store import Store
 
@@ -17,16 +17,39 @@ def store_page(store_id):
 
 @store_blueprint.route('/edit/<string:store_id>', methods=['GET','POST'])
 def edit_store(store_id):
+    store = Store.get_by_id(store_id)
     if request.method == 'POST':
-        pass
-    return "Edit store page"
+        name = request.form['name']  # get data from html
+        url_prefix = request.form['url_prefix']
+        tag_name = request.form['tag_name']
+        query = json.loads(request.form['query'])
+
+        store.name = name
+        store.url_prefix = url_prefix
+        store.tag_name = tag_name
+        store.query = query
+        store.save_to_mongo()  # update the data, not just save!!
+
+        return redirect(url_for('.index'))
+    return render_template('/stores/edit_store.html', store=store)
 
 
 @store_blueprint.route('/delete/<string:store_id>')
 def delete_store(store_id):
-    return "Delete store"
+    Store.get_by_id(store_id).delete()
+    return redirect(url_for('.index'))
 
 @store_blueprint.route('/new', methods=['GET', 'POST'])
 def create_store():
-    return "This is the store creation page"
+    if request.method == 'POST':
+        name = request.form['name']
+        url_prefix = request.form['url_prefix']
+        tag_name = request.form['tag_name']
+        # (request.form['query']) is string, should be converted to json representation, and converted to python dic
+        query = json.loads(request.form['query'])
 
+        Store(name, url_prefix, tag_name, query).save_to_mongo()
+
+        return redirect(url_for('.index'))
+
+    return render_template('stores/new_store.html')
