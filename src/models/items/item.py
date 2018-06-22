@@ -31,7 +31,7 @@ class Item(object):
         element = soup.find(self.tag_name, self.query)  # span = tag_name in Amazon, query is dict in python
         string_price = element.text.strip()
 
-        pattern = re.compile("(\d.\d+)")  # () is able to match $115.00
+        pattern = re.compile("(\d+.\d+)")  # () is able to match $115.00
         match = pattern.search(string_price)
         self.price = float(match.group())  # updating price whenever we load this price
 

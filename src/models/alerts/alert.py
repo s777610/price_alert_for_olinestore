@@ -19,6 +19,13 @@ class Alert(object):
     def __repr__(self):
         return "<Alert for {} on item {} with price {}>".format(self.user_email, self.item.name, self.price_limit)
 
+    """
+    The (navigate to alert) is going to be running from alert_updater, 
+    not from app.py, the alert_updater doesn't know the endpoint, 
+    doesn't know the methods which are associated with them,
+    so we can not use url_for in here,
+    because it is not going to be running through flask application
+    """
     def send(self):
         return requests.post(
             AlertConstants.URL,
@@ -27,7 +34,8 @@ class Alert(object):
                 "from": AlertConstants.FROM,
                 "to": self.user_email,
                 "subject": "Price limit reached for {}".format(self.item.name),
-                "text": "We have found a deal! (link here)."
+                "text": "We have found a deal! ({}). To navigate to the alert, visit {}".format(
+                    self.item.url, "http://pricing.jslvtr.com/alerts/{}".format(self._id))
             }
         )
 
