@@ -2,5 +2,5 @@
 
 DEBUG = True
 ADMINS = frozenset([
-    "yourname@yourdomain.com"
+    "admins@admins.com"  # administrator can edit store
 ])
