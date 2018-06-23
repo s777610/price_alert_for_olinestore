@@ -23,7 +23,7 @@ class Database(object):
 
     @staticmethod
     def update(collection, query, data):
-        Database.DATABASE[collection].update(query, data, upsert=True)
+        Database.DATABASE[collection].update(query, data, upsert=True)  # upsert: if we can find element by query, insert it
 
     @staticmethod
     def remove(collection, query):

@@ -32,7 +32,7 @@ class Alert(object):
             auth=("api", AlertConstants.API_KEY),
             data={
                 "from": AlertConstants.FROM,
-                "to": self.user_email,
+                "to": [self.user_email],
                 "subject": "Price limit reached for {}".format(self.item.name),
                 "text": "We have found a deal! ({}). To navigate to the alert, visit {}".format(
                     self.item.url, "http://pricing.jslvtr.com/alerts/{}".format(self._id))
