@@ -1,3 +1,7 @@
+This is a web application, which is able to track the price of items from the online store.  The application can notify users when the prices of items drop. The application checks the prices every 10 minutes. 
+
+Notice:  This Web application uses Mailgun to send the email to users in order to notify them when the price drop. The details of Mailgun account and API key should be put into src/models/alerts.constants.py.
+
 This web application only allows administrators(src/config/py) to add, remove and edit online stores.
 
 How to use this Web?
