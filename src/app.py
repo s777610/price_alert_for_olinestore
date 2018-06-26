@@ -3,7 +3,7 @@ from flask import Flask, render_template
 from src.common.database import Database
 
 app = Flask(__name__)
-app.config.from_object('config')
+app.config.from_object('src.config')
 app.secret_key = "123"  # normally is 32 characters of random letters
 """
 When browser comes into app and requests a page, 
