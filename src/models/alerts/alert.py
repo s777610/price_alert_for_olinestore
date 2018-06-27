@@ -28,7 +28,7 @@ class Alert(object):
     """
     def send(self):
         return requests.post(
-            AlertConstants.URL,
+            str(AlertConstants.URL),
             auth=("api", str(AlertConstants.API_KEY)),
             data={"from": str(AlertConstants.FROM),
                   "to": [str(self.user_email)],
