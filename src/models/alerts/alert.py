@@ -29,9 +29,9 @@ class Alert(object):
     def send(self):
         return requests.post(
             AlertConstants.URL,
-            auth=("api", AlertConstants.API_KEY),
-            data={"from": AlertConstants.FROM,
-                  "to": [self.user_email],
+            auth=("api", str(AlertConstants.API_KEY)),
+            data={"from": str(AlertConstants.FROM),
+                  "to": [str(self.user_email)],
                   "subject": "Price limit reached for {}".format(self.item.name),
                   "text": "We have found a deal! ({}). To navigate to the alert, visit {}".format(
                     self.item.url, "https://priceing-alerts.herokuapp.com/alerts/{}".format(self._id))})
@@ -89,3 +89,13 @@ class Alert(object):
 
     def delete(self):
         Database.remove(AlertConstants.COLLECTION, {'_id': self._id})
+
+    """
+    requests.post(
+        "https://api.mailgun.net/v3/sandbox52569de6abca49879c3f30758bce0d53.mailgun.org/messages",
+        auth=("api", "key-e9fa8ff8fbb003f4fdee9ce6d3ceb556"),
+        data={"from": "Excited User <postmaster@sandbox52569de6abca49879c3f30758bce0d53.mailgun.org>",
+              "to": ["s777610@gmail.com"],
+              "subject": "Hello",
+              "text": "Testing some Mailgun awesomeness!!!!"})
+    """
