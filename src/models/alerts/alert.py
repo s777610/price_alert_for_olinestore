@@ -28,10 +28,10 @@ class Alert(object):
     """
     def send(self):
         return requests.post(
-            str(AlertConstants.URL),
-            auth=("api", str(AlertConstants.API_KEY)),
-            data={"from": str(AlertConstants.FROM),
-                  "to": [str(self.user_email)],
+            AlertConstants.URL,
+            auth=("api", AlertConstants.API_KEY),
+            data={"from": AlertConstants.FROM,
+                  "to": [self.user_email],
                   "subject": "Price limit reached for {}".format(self.item.name),
                   "text": "We have found a deal! ({}). To navigate to the alert, visit {}".format(
                     self.item.url, "https://priceing-alerts.herokuapp.com/alerts/{}".format(self._id))})
