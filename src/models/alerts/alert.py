@@ -7,10 +7,11 @@ from src.common.database import Database
 from src.models.items.item import Item
 
 
+
 class Alert(object):
     def __init__(self, user_email, price_limit, item_id, active=True, last_checked=None, _id=None):
         self.user_email = user_email
-        self.price_limit = price_limit
+        self.price_limit = float(price_limit)
         self.item = Item.get_by_id(item_id)
         self.last_checked = datetime.datetime.utcnow() if last_checked is None else last_checked
         self._id = uuid.uuid4().hex if _id is None else _id
@@ -35,6 +36,9 @@ class Alert(object):
                   "subject": "Price limit reached for {}".format(self.item.name),
                   "text": "We have found a deal! ({}). To navigate to the alert, visit {}".format(
                     self.item.url, "https://priceing-alerts.herokuapp.com/alerts/{}".format(self._id))})
+
+
+
 
     @classmethod
     def find_needing_update(cls, minutes_since_update=AlertConstants.ALERT_TIMEOUT):
@@ -89,4 +93,5 @@ class Alert(object):
 
     def delete(self):
         Database.remove(AlertConstants.COLLECTION, {'_id': self._id})
+
 
