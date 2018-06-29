@@ -5,7 +5,7 @@ import requests
 import src.models.alerts.constants as AlertConstants
 from src.common.database import Database
 from src.models.items.item import Item
-
+from src.models.stores.store import Store
 
 
 class Alert(object):
