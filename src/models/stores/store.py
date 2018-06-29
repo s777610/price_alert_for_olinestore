@@ -51,19 +51,23 @@ class Store(object):
         #  http: // www, target -> {'_id': ..., 'name': 'target'...}
         return cls(**Database.find_one(StoreConstants.COLLECTION, {"url_prefix": {"$regex": '^{}'.format(url_prefix)}}))
 
+    """
+    Return a store from a url like "http://www.target.com/item/sdjf2.html"
+    :param url: The item's URL
+    :return: a Store, or raise a StoreNoFoundException if no store matchs the URL
+    """
+
     @classmethod
     def find_by_url(cls, url):
-        """
-        Return a store from a url like "http://www.target.com/item/sdjf2.html"
-        :param url: The item's URL
-        :return: a Store, or raise a StoreNoFoundException if no store matchs the URL
-        """
-        for i in range(0, len(url)+1):
+        for i in range(len(url) - 1, - 1, -1):
             try:
-                store = cls.get_by_url_prefix(url[:i])
-                return store
+                if Database.find_one(StoreConstants.COLLECTION,
+                                     {'url_prefix': {"$regex": '^{}'.format(url[:i])}}) is not None:
+                    store = cls.get_by_url_prefix(url[:i])
+                    return store
             except:
-                raise StoreErrors.StoreNotFoundException("The URL used Prefix to find the store didn't give us any results!")
+                raise StoreErrors.StoreNotFoundException(
+                    "The URL Prefix used to find the store did not fetch any resutls")
 
 
     @classmethod
