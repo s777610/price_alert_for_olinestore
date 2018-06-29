@@ -9,13 +9,15 @@ from src.models.items.item import Item
 
 
 class Alert(object):
-    def __init__(self, user_email, price_limit, item_id, active=True, last_checked=None, _id=None):
+    def __init__(self, user_email, price_limit, item_id, active=True, store=None, last_checked=None, _id=None):
         self.user_email = user_email
         self.price_limit = float(price_limit)
         self.item = Item.get_by_id(item_id)
         self.last_checked = datetime.datetime.utcnow() if last_checked is None else last_checked
         self._id = uuid.uuid4().hex if _id is None else _id
         self.active = active
+        store = Store.find_by_url(self.item.url)
+        self.store = store.name
 
     def __repr__(self):
         return "<Alert for {} on item {} with price {}>".format(self.user_email, self.item.name, self.price_limit)
@@ -59,7 +61,8 @@ class Alert(object):
             "last_checked": self.last_checked,
             "user_email": self.user_email,
             "item_id": self.item._id,
-            "active": self.active
+            "active": self.active,
+            "store": self.store
         }
 
     def load_item_price(self):
