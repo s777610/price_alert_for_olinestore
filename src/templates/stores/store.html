@@ -6,6 +6,7 @@
     </h1>
 </div>
 <p>All URLs in this store should start with <strong>{{ store.url_prefix }}</strong></p>
+<a class="btn btn-default" href="{{ store.url_prefix }}">Visit Online Store</a>
 {% if session['email'] in config.ADMINS %}
 <div class="panel panel-default">
     <div class="panel-body">
