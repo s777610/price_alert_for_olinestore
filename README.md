@@ -22,18 +22,18 @@ This web application only allows administrators(src/config.py) to add, remove an
 5. Users are able to edit, activate, deactivate and delete alerts.
 
 
-This is home page, which allow users to register, longin and see the supporting stores
+1. This is home page, which allow users to register, longin and see the supporting stores
 <img width="1018" alt="screen shot 2018-07-03 at 12 33 48 pm" src="https://user-images.githubusercontent.com/35472776/42240926-bb972a52-7ebd-11e8-9c0a-3635327f526c.png">
 
-This is the supporting stores page, shows users that what stores are available right now.
+2. This is the supporting stores page, shows users that what stores are available right now.
 <img width="806" alt="screen shot 2018-07-03 at 12 34 34 pm" src="https://user-images.githubusercontent.com/35472776/42240978-e34aab50-7ebd-11e8-97a7-549067cc10c2.png">
 
-This is user-alerts page, shows alerts all alerts they have created. Then, right click alert can edit, activate, deactivate and delete the alert.
+3. This is user-alerts page, shows alerts all alerts they have created. Then, right click alert can edit, activate, deactivate and delete the alert.
 <img width="781" alt="screen shot 2018-07-03 at 12 34 52 pm" src="https://user-images.githubusercontent.com/35472776/42240999-f71d3ec2-7ebd-11e8-8a85-5d1b73f4f0a6.png">
 
-This page allows users to create the new alert.
+4. This page allows users to create the new alert.
 <img width="764" alt="screen shot 2018-07-03 at 12 35 04 pm" src="https://user-images.githubusercontent.com/35472776/42241028-0e549996-7ebe-11e8-9550-88866bd5fb45.png">
 
-This page allows admins to create the supporting stores. The admins have to pass the tag name and query of that item.
+5. This page allows admins to create the supporting stores. The admins have to pass the tag name and query of that item.
 The normal user is not able to access this page for security reasons.
 <img width="767" alt="screen shot 2018-07-03 at 12 35 53 pm" src="https://user-images.githubusercontent.com/35472776/42241055-21f3a5be-7ebe-11e8-9b3f-6b22fbf2aa15.png">
