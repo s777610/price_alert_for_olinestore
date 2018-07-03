@@ -29,3 +29,7 @@ This web application only allows administrators(src/config.py) to add, remove an
 
 <img width="781" alt="screen shot 2018-07-03 at 12 34 52 pm" src="https://user-images.githubusercontent.com/35472776/42240999-f71d3ec2-7ebd-11e8-8a85-5d1b73f4f0a6.png">
 
+
+<img width="764" alt="screen shot 2018-07-03 at 12 35 04 pm" src="https://user-images.githubusercontent.com/35472776/42241028-0e549996-7ebe-11e8-9550-88866bd5fb45.png">
+
+
