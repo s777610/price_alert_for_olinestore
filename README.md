@@ -22,3 +22,6 @@ This web application only allows administrators(src/config.py) to add, remove an
 5. Users are able to edit, activate, deactivate and delete alerts.
 
 <img width="1018" alt="screen shot 2018-07-03 at 12 33 48 pm" src="https://user-images.githubusercontent.com/35472776/42240926-bb972a52-7ebd-11e8-9c0a-3635327f526c.png">
+
+
+<img width="806" alt="screen shot 2018-07-03 at 12 34 34 pm" src="https://user-images.githubusercontent.com/35472776/42240978-e34aab50-7ebd-11e8-97a7-549067cc10c2.png">
