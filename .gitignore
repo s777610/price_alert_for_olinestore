@@ -110,6 +110,10 @@ venv.bak/
 #db
 company_blog/data.sqlite
 
+.DS_Store
+.idea
+
+
 # mypy
 .mypy_cache/
 .dmypy.json
