@@ -1,6 +1,6 @@
 # Price Alert for Online Store
 
-The URL of this Web App:
+## The URL of this Web App:
 ## https://priceing-alerts.herokuapp.com/
 
 This is a web application, which is able to track the price of items from the online store.  
