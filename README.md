@@ -13,7 +13,16 @@ The price of item could be found by using beautifulsoup to parse html
 
 ## Installation
 ```
-pip install -r requirements.txt
+pipenv install
+```
+### Make sure you have MongoDB installed before running the application
+1. Run MongoDB server locally
+```
+mongod
+```
+2. Create the MongoDB instance and connect to the server
+```
+mongo
 ```
 
 Notice:  This Web application uses Mailgun API to send the email to users in order to notify them when the price drop.
