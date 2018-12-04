@@ -62,7 +62,7 @@ class Store(object):
         for i in range(len(url) - 1, - 1, -1):
             try:
                 if Database.find_one(StoreConstants.COLLECTION,
-                                     {'url_prefix': {"$regex": '^{}'.format(url[:i])}}) is not None:
+                                    {'url_prefix': {"$regex": '^{}'.format(url[:i])}}) is not None:
                     store = cls.get_by_url_prefix(url[:i])
                     return store
             except:

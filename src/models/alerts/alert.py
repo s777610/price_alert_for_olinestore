@@ -34,9 +34,9 @@ class Alert(object):
             AlertConstants.URL,
             auth=("api", AlertConstants.API_KEY),
             data={"from": AlertConstants.FROM,
-                  "to": [self.user_email],
-                  "subject": "Price limit reached for {}".format(self.item.name),
-                  "text": "We have found a deal! ({}). To navigate to the alert, visit {}".format(
+                "to": [self.user_email], 
+                "subject": "Price limit reached for {}".format(self.item.name),
+                "text": "We have found a deal! ({}). To navigate to the alert, visit {}".format(
                     self.item.url, "https://priceing-alerts.herokuapp.com/alerts/{}".format(self._id))})
 
 
@@ -45,11 +45,9 @@ class Alert(object):
     @classmethod
     def find_needing_update(cls, minutes_since_update=AlertConstants.ALERT_TIMEOUT):
         last_updated_limit = datetime.datetime.utcnow() - datetime.timedelta(minutes=minutes_since_update)  # 10 minutes
-        return [cls(**elem) for elem in Database.find(AlertConstants.COLLECTION,
-                                                      {"last_checked":
-                                                           {"$lte": last_updated_limit},  # gte = greater than or equal to
-                                                       "active": True  # just check the active alerts
-                                                       })]
+        return [cls(**elem) for elem in Database.find(AlertConstants.COLLECTION, 
+                {"last_checked": {"$lte": last_updated_limit},})]
+            
 
     def save_to_mongo(self):
         Database.update(AlertConstants.COLLECTION, {"_id": self._id}, self.json())
