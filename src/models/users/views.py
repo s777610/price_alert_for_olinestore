@@ -15,10 +15,11 @@ def login_user():
         password = request.form['password']
 
         try:
+            # inside is_login_valid() can raise error, then error will be catched by except
             if User.is_login_valid(email, password):
                 session['email'] = email
                 return redirect(url_for(".user_alerts"))  # get the method from current file
-        except UserErrors.UserError as e:
+        except UserErrors.UserError as e: # when you catch the parent class, all subclasses are also caught.
             return e.message
 
     return render_template("users/login.html")  # send the user an error if their login is invalid
