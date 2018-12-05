@@ -7,10 +7,10 @@ store_blueprint =  Blueprint('stores', __name__)
 @store_blueprint.route('/')
 def index():
     stores = Store.all()
-    return render_template('stores/store_index.html', stores=stores)
+    return render_template('/store_index.html', stores=stores)
 
 
-@store_blueprint.route('/store/<string:store_id>')
+@store_blueprint.route('/<string:store_id>')
 def store_page(store_id):
     return render_template('stores/store.html', store=Store.get_by_id(store_id))
 
